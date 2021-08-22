@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        outline: none;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+      }
+
+      input {
+        padding: 10px 15px;
+        border: none;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 15px;
+        width: 100%;
+      }
+
+      ul {
+        position: absolute;
+        top: calc(100% + 15px);
+        left: 0;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        height: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-image: linear-gradient(
+          135deg,
+          rgba(245, 246, 247),
+          rgba(181, 207, 247)
+        );
+        border-radius: 15px;
+        transition: height 150ms;
+      }
+      ul.show-data {
+        height: 300px;
+      }
+
+      ul li {
+        cursor: pointer;
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin: 15px;
+        display: block;
+        transition: background-color 150ms;
+        border-radius: 15px;
+      }
+
+      ul li:hover:not(.header) {
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+      .data-live {
+        position: relative;
+        min-width: 450px;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="data-live">
+      <input type="text" />
+      <ul>
+        <li>Jakarta, Jakarta</li>
+        <li>Surabaya, Jawa Timur</li>
+        <li>Malang, Jawa Timur</li>
+        <li>Blitar, Jawa Timur</li>
+        <li>Jayapura, Papua</li>
+      </ul>
+    </div>
+
+    <!-- <input
+      type="text"
+      id="name"
+      onkeyup="myFunction('name','myUL')"
+      placeholder="Search for names.."
+      title="Type in a name"
+    /> -->
+    <script src="scrip.js"></script>
+  </body>
+</html>
