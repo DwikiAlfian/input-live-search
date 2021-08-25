@@ -16,21 +16,18 @@ for (dataLiveCount = 0; dataLiveCount < dataLiveText.length; dataLiveCount++) {
 
 // FILTER
 for (
-  dataLiveInputCount = 0;
-  dataLiveInputCount < dataLiveInput.length;
-  dataLiveInputCount++
+  dataLiveInputCount = 0;dataLiveInputCount < dataLiveInput.length;dataLiveInputCount++
 ) {
   dataLiveInput[dataLiveInputCount].addEventListener("keyup", function () {
-    for (var i = 0; i < dataLiveText.length; i++) {
-      if (
-        this.parentElement
-          .getElementsByTagName("li")
-          [i].innerText.toUpperCase()
-          .indexOf(this.value.toUpperCase()) > -1
+    var sum = this.parentElement.children[1].children;
+    var result = this.value.toUpperCase();
+    for (var i = 0; i < this.parentElement.getElementsByTagName('li').length; i++) {
+      console.log(sum[i].innerText.toUpperCase().indexOf(result))
+      if (sum[i].innerText.toUpperCase().indexOf(result) > -1
       ) {
-        dataLiveText[i].style.display = "";
+        sum[i].style.display = "";
       } else {
-        dataLiveText[i].style.display = "none";
+        sum[i].style.display = "none";
       }
     }
   });
@@ -41,19 +38,3 @@ for (
     this.parentElement.children[1].classList.remove("show-data");
   });
 }
-// function myFunction(input, list) {
-//   var input, filter, ul, li, a, i, txtValue, list, input;
-//   input = document.getElementById(input);
-//   filter = input.value.toUpperCase();
-//   ul = document.getElementById(list);
-//   li = ul.getElementsByTagName("li");
-//   for (i = 0; i < li.length; i++) {
-//     a = li[i].getElementsByTagName("a")[0];
-//     txtValue = a.textContent || a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       li[i].style.display = "";
-//     } else {
-//       li[i].style.display = "none";
-//     }
-//   }
-// }
